@@ -1,5 +1,7 @@
 Pagamento::Application.routes.draw do
   
+  resources :fornecedores
+
   devise_for :usuarios
 
   root :to => 'home#index'
