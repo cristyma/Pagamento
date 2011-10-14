@@ -21,5 +21,5 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'therubyracer' # prepara para uso do java coffe script
+gem 'therubyracer', group: [:development, :test] # prepara para uso do java coffe script
 
