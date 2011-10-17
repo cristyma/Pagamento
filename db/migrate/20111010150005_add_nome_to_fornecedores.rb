@@ -1,5 +1,7 @@
 class AddNomeToFornecedores < ActiveRecord::Migration
   def change
-    add_column :fornecedores, :nome, :string
+    rename_column :fornecedores, :cnpj_cpf, :cnpj
+    add_column :fornecedores, :cpf, :string
+    add_column :fornecedores, :pj, :bolean
   end
 end
