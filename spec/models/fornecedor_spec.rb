@@ -20,4 +20,9 @@ describe Fornecedor do
     Fornecedor.new(nome: 'Fulano', cnpj: '00000000000191').should be_valid
     Fornecedor.new(nome: 'Fulano', cnpj: '1').should be_invalid
   end
+
+  it "não aceita cpf ou cnpj juntos" do
+    Fornecedor.new(nome: 'Fulano', cpf: '52387453115', cnpj: '00000000000191').should be_invalid
+  end
+
 end
