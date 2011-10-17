@@ -11,6 +11,7 @@ group :development	do
 end
 
 gem 'devise' # faz autenticação
+gem 'brazilian-rails'
 
 gem 'pg', group: :production
 
