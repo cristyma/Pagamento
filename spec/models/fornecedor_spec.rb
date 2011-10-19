@@ -29,4 +29,6 @@ describe Fornecedor do
     Fornecedor.new(nome: 'Fulano').should be_invalid
   end
 
+  
+
 end
