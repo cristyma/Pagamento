@@ -15,11 +15,11 @@ class Fornecedor < ActiveRecord::Base
   private
     def cpf_ou_cnpj
       if cpf.present? and cnpj.present?
-        errors[:base] << "use cnpj ou cpf"
+        errors[:base] << "Você tentou cadastrar CPF e CNPJ juntos"
       end
 
       if cpf.blank? and cnpj.blank?
-        errors[:base] << "Use ao menos cnpj ou cpf"
+        errors[:base] << "CNPJ e CPF estão em branco"
       end
     end
 end
