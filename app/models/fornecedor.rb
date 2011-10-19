@@ -12,6 +12,9 @@ class Fornecedor < ActiveRecord::Base
   usar_como_cnpj :cnpj
   validate :cpf_ou_cnpj
 
+  validates :cnpj, presence: true, if: :pj?
+  validates :cpf, presence: true, unless: :pj?
+
   private
     def cpf_ou_cnpj
       if cpf.present? and cnpj.present?
