@@ -14,10 +14,12 @@
 ActiveRecord::Schema.define(:version => 20111017115718) do
 
   create_table "fornecedores", :force => true do |t|
-    t.string   "cnpj_cpf"
+    t.string   "cpf"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "nome"
+    t.string   "cnpj"
+    t.boolean  "pj"
   end
 
   create_table "usuarios", :force => true do |t|
