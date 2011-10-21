@@ -12,7 +12,12 @@
 
 <p>
   <b>Data:</b>
-  <%= @conformidade.data %>
+  <%= localize @conformidade.data %>
+</p>
+
+<p>
+  <b>Valor:</b>
+  <%= number_to_currency @conformidade.valor %>
 </p>
 
 <p>
