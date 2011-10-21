@@ -8,8 +8,10 @@
     <th>Valor</th>
     <th>Fornecedor</th>
     <th></th>
-    <th></th>
-    <th></th>
+    <% if usuario_signed_in? %>
+      <th></th>
+      <th></th>
+      <% end %>
   </tr>
 
 <% @conformidades.each do |conformidade| %>
@@ -20,12 +22,16 @@
     <td><%= conformidade.valor %></td>
     <td><%= conformidade.fornecedor.nome %></td>
     <td><%= link_to 'Detalhes', conformidade %></td>
+    
+    <% if usuario_signed_in? %>
     <td><%= link_to 'Editar', edit_conformidade_path(conformidade) %></td>
     <td><%= link_to 'Excluir', conformidade, confirm: 'Tem certeza?', method: :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
+<% if usuario_signed_in? %>
 <%= link_to 'Nova Conformidade', new_conformidade_path %>
+<% end %>
