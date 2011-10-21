@@ -4,6 +4,8 @@ require "brcpfcnpj"
 
 
 class Fornecedor < ActiveRecord::Base
+
+  has_many :conformidades
   validates :nome, presence: true
   #validates :cpf, presence: true unless :pj?
   #validates :cnpj, presence: true if :pj?
