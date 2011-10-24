@@ -18,8 +18,12 @@
 <br><hr>
 
 <nav>
-  <%= link_to 'Conformidades', conformidades_path %>
+  <%= link_to 'Conformidades', conformidades_path %> |
   <%= link_to 'Fornecedores', fornecedores_path %>
+  
+  <% if usuario_signed_in? %>
+    | <%= link_to 'usuarios', usuarios_path %>
+  <% end %>
 </nav>
 
 <p class="notice"><%= notice %></p>

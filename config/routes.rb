@@ -3,10 +3,14 @@ Pagamento::Application.routes.draw do
   resources :conformidades
 
   resources :fornecedores
+  
 
   devise_for :usuarios
 
+  resources :usuarios
+
   root :to => 'conformidades#index'
+  #root :to => 'usuarios#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

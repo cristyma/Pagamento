@@ -1,0 +1,18 @@
+<p>
+  <b>Email:</b>
+  <%= @usuario.email %>
+</p>
+
+<!-- <p>
+  <b>Password:</b>
+  <%= @usuario.password %>
+</p>
+
+<p>
+  <b>Password confirmation:</b>
+  <%= @usuario.password_confirmation %>
+</p> -->
+
+
+<%= link_to 'Editar', edit_usuario_path(@usuario) %> |
+<%= link_to 'Voltar', usuarios_path %>
