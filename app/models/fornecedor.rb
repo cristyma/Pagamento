@@ -16,6 +16,7 @@ class Fornecedor < ActiveRecord::Base
 
   validates :cnpj, presence: true, if: :pj?
   validates :cpf, presence: true, unless: :pj?
+  validates_uniqueness_of :cnpj, :cpf
 
   private
     def cpf_ou_cnpj
