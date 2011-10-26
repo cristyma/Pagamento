@@ -5,7 +5,7 @@ class Usuario < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :papel
 
   belongs_to :papel # é belongs_to pq tem a chave estrangeira na table ***_id
 end
