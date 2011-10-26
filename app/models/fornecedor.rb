@@ -18,6 +18,14 @@ class Fornecedor < ActiveRecord::Base
   validates :cpf, presence: true, unless: :pj?
   validates_uniqueness_of :cnpj, :cpf
 
+
+  scope :classificar, order('nome ASC')
+  # scope :default, order('id ASC') --> NÃO precisa especificar no fornecedores_controller
+  # OUTRA FORMA DE DEFINIR A ORDENAÇAO
+  # def self.classificar
+  #     order('nome ASC')
+  # end
+
   private
     def cpf_ou_cnpj
       if cpf.present? and cnpj.present?
