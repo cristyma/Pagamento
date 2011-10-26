@@ -6,7 +6,7 @@ class FornecedoresController < ApplicationController
 
 
   def index
-    @fornecedores = Fornecedor.all
+    @fornecedores = Fornecedor.page(params[:page]).per(1)
 
     # respond_to do |format|
     #   format.html # index.html.erb

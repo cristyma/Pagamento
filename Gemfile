@@ -21,6 +21,7 @@ group :assets do
   gem 'uglifier'
 end
 
+gem 'kaminari' # faz paginação
 
 gem 'jquery-rails'
 

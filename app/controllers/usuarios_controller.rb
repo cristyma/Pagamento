@@ -4,7 +4,7 @@ class UsuariosController < ApplicationController
   before_filter :authenticate_usuario!
   
   def index
-    @usuarios = Usuario.all
+    @usuarios = Usuario.page(params[:page]).per(1)
 
     respond_to do |format|
       format.html # index.html.erb
