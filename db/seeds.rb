@@ -3,7 +3,7 @@
 Papel.delete_all
 admin= Papel.create!(nome: 'Administrador')
 usuario= Papel.create!(nome: 'Usuário Avançado')
-Papel.create!(nome: 'Visitante')
+visitante= Papel.create!(nome: 'Visitante')
 
 Usuario.delete_all
 Usuario.create(
@@ -18,3 +18,5 @@ Usuario.create(
 		password: '123456', 
 		password_confirmation: '123456',
     papel: usuario)
+
+
