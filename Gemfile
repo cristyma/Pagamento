@@ -22,6 +22,7 @@ group :assets do
 end
 
 gem 'kaminari' # faz paginação
+gem 'cancan' # encapsula regras de autorização
 
 gem 'jquery-rails'
 

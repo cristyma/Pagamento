@@ -20,6 +20,6 @@ class Usuario < ActiveRecord::Base
   end  
 
   def visitante?
-    papel.nome == 'Visistante'
+    papel.nome == 'Visitante'
   end  
 end

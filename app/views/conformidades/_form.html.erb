@@ -35,10 +35,13 @@
     <%= f.label "Observação" %><br />
     <%= f.text_area :observacao %>
   </div>
+
+  <% if can? :publicar, @conformidade %>
   <div class="field">
     <%= f.label "Publicado" %><br />
     <%= f.check_box :publicado %>
   </div>
+  <% end %>
   
   
   <div class="actions">

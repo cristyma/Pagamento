@@ -5,7 +5,11 @@
     <th>Nome</th>
     <th>CNPJ/CPF</th>
     <th>PJ</th>
+
+  <% if can? :ver_coluna_publicado, @fornecedores %>
     <th>Publicado</th>
+  <% end %>
+
     <th></th>
     <th></th>
   </tr>
@@ -20,7 +24,10 @@
     <% end %>
 
     <td><%= fornecedor.pj? ? 'Sim' : 'Não' %></td>
+
+    <% if can? :ver_coluna_publicado, @fornecedores %>
     <td><%= fornecedor.publicado? ? 'Sim' : 'Não' %></td>
+    <% end %>
 
     <!--<td><%= link_to 'Show', fornecedor %></td>-->
     <% if usuario_signed_in?  %>

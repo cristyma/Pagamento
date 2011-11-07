@@ -6,7 +6,7 @@ class FornecedoresController < ApplicationController
 
 
   def index
-    @fornecedores = Fornecedor.classificar.page(params[:page]).per(3)
+    @fornecedores = Fornecedor.accessible_by(current_ability).classificar.page(params[:page]).per(3)
 
     # respond_to do |format|
     #   format.html # index.html.erb

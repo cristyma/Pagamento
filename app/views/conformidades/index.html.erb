@@ -7,7 +7,10 @@
     <th>Data</th>
     <th>Valor</th>
     <th>Fornecedor</th>
+
+    <% if can? :ver_coluna_publicado, @conformidades %>
     <th>Publicado</th>
+    <% end %>
     <th></th>
     <% if usuario_signed_in? %>
       <th></th>
@@ -22,7 +25,11 @@
     <td><%= localize conformidade.data %></td>
     <td><%= number_to_currency conformidade.valor %></td>
     <td><%= conformidade.fornecedor.nome %></td>
+
+    <% if can? :ver_coluna_publicado, @conformidades %>
     <td><%= conformidade.publicado? ? 'Sim' : 'Não' %></td>
+    <% end %>
+
     <td><%= link_to 'Detalhes', conformidade %></td>
     
     <% if usuario_signed_in? %>

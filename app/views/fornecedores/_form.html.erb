@@ -30,10 +30,13 @@
     <%= f.label "CNPJ" %><br />
     <%= f.text_field :cnpj %>
   </div>
+
+  <% if can? :publicar, @fornecedor %>
   <div class="field">
     <%= f.label "Publicado" %><br />
     <%= f.check_box :publicado %>
   </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>
