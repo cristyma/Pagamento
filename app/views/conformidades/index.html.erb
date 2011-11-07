@@ -1,15 +1,42 @@
 <h1>Conformidades</h1>
 
+<%= form_for @busca do |f| %>
+  <div>
+    <%= f.label :caixa %>
+    <%= f.text_field :caixa_contains %>
+
+  </div>
+
+  <div>
+    <%= f.label 'Data entre' %>
+    <%= f.text_field :data_gte %>
+    <%= f.label 'e' %>
+    <%= f.text_field :data_lte %>
+  </div>
+
+  <div>
+    <%= f.submit :busca %>
+    <input type="reset" value="Limpar">
+
+  </div>
+  <br><br>
+
+<% end %>
+
+
+
 <table>
   <tr>
-    <th>Caixa</th>
-    <th>Processo</th>
-    <th>Data</th>
-    <th>Valor</th>
-    <th>Fornecedor</th>
+    <th><%= sort_link @busca, :caixa %></th>
+    <th><%= sort_link @busca, :processo %></th>
+    <th><%= sort_link @busca, :data %></th>
+    <th><%= sort_link @busca, :valor %></th>
+    <th><%= sort_link @busca, :fornecedor_id %></th>
+    
+    
 
     <% if can? :ver_coluna_publicado, @conformidades %>
-    <th>Publicado</th>
+      <th><%= sort_link @busca, :publicado %></th>
     <% end %>
     <th></th>
     <% if usuario_signed_in? %>

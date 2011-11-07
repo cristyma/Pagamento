@@ -23,6 +23,7 @@ end
 
 gem 'kaminari' # faz paginação
 gem 'cancan' # encapsula regras de autorização
+gem 'meta_search' #busca
 
 gem 'jquery-rails'
 

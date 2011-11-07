@@ -3,7 +3,8 @@ class ConformidadesController < ApplicationController
   # GET /conformidades
   # GET /conformidades.json
   def index
-    @conformidades = Conformidade.accessible_by(current_ability).page(params[:page]).per(2)
+    @busca = Conformidade.search(params[:search])
+    @conformidades = @busca.relation.accessible_by(current_ability).page(params[:page]).per(2)
 
     respond_to do |format|
       format.html # index.html.erb
